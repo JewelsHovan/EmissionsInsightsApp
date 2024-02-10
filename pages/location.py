@@ -25,9 +25,8 @@ def show():
 
     # Add an "All Cities" option to the cities list
     cities = ["All Cities"] + list(cities)
-    selected_city = st.sidebar.selectbox("City", cities)
 
-    if selected_city == "All Cities":
+    if (selected_city := st.sidebar.selectbox("City", cities)) == "All Cities":
         # Filter data by state only
         filtered_data = state_data
     else:
