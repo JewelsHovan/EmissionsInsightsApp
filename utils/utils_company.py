@@ -68,7 +68,7 @@ def generate_line_chart(data, emission_type):
     # Customizing the line chart
     line_chart = alt.Chart(emission_data).mark_line(point=True).encode(
         x=alt.X('Year:O', axis=alt.Axis(title='Year', labelAngle=-45)),  # Orienting year labels for better readability
-        y=alt.Y(f'{emission_col}:Q', axis=alt.Axis(title=f'Emissions (Metric Tons)')),  # Adding units to the y-axis title
+        y=alt.Y(f'{emission_col}:Q', axis=alt.Axis(title='Emissions (Metric Tons)')),  # Adding units to the y-axis title
         tooltip=[alt.Tooltip('Year:O', title='Year'), alt.Tooltip(f'{emission_col}:Q', title='Emissions (Metric Tons)')],  # Adding units to the tooltip
         color=alt.value('steelblue'),  # Setting a consistent color for the line
     ).properties(
